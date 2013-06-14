@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="EasyFormMail/jquery.easyFormMail.js"></script>
+        <script>
+            $(function(){
+                $("#myForm").EasyFormMail({to:"recipient@example.com"});
+            })
+        </script>
+    </head>
+    <body>
+        <form id="myForm">
+            <input name="input1" type="text"/>
+            <input name="input2" type="text"/>
+            <input name="input3" type="text"/>
+            <textarea name="textarea1"></textarea>
+            <input value="enviar" type="submit"/>
+            <input value="reset" type="reset"/>
+        </form>
+
+    </body>
+</html>
