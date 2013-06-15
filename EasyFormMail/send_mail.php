@@ -28,7 +28,11 @@ if (isset($_REQUEST['to']) && !empty($_REQUEST['to'])) {
     if (mail($_REQUEST['to'], $_REQUEST['subject'], $msg, $headers, "-r" . $_REQUEST['to'])) {
         ?><script type="text/javascript">alert("<?php echo $_REQUEST['sucess_msg']; ?>")</script><?php
     } else {
-        ?><script type="text/javascript">alert(" Could not send the email!\n\ Make sure PHP is installed correctly and\n\ the mail configurations are enabled.")</script><?php
+        if (!isset($_REQUEST['error_msg']) || $_REQUEST['error_msg'] == NULL) {
+            ?><script type="text/javascript">alert(" Could not send the email!\n\ Make sure PHP is installed correctly and\n\ the mail configurations are enabled.")</script><?php
+        } else {
+            ?><script type="text/javascript">alert("<?php echo $_REQUEST['error_msg']; ?>")</script><?php
+        }
     }
 } else {
     ?><script type="text/javascript">alert(" You can not send an email without choosing a recipient.\n\ Please set a value for position 'to'.\n\ EX: $('#myForm').EasyFormMail({to: 'recipient@example.com'})")</script><?php

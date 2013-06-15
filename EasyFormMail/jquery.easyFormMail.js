@@ -5,7 +5,8 @@
         var s = $.extend({
             to: null,                           // [string] Receiver, or receivers of the mail. The formatting of this string must comply with RFC 2822. Some examples are: user@example.com user@example.com, anotheruser@example.com
             subject: null,                      // [string]   optional subject for email
-            sucess_msg: null                    // [string]   optional sucess message when the email is sucefully sent
+            sucess_msg: null,                   // [string]   optional sucess message when the email is sucefully sent
+            error_msg: null                     // [string]   optional error message when the email is not sent
    
         }, o);
         return this.each(function(i, widget){

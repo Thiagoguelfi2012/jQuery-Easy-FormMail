@@ -30,9 +30,10 @@ PARAMS:
 THE PLUGIN WORK WITH JSON.THE AVAIlABLE POSITIONS IS
 
     {
-    to:"recipient@example.com",                  // required
-    subject: "Your Subject Here",                // not-required
-    sucess_msg: "Your Sucess Alert Message Here" // not-required
+    to:"recipient@example.com",                   // required
+    subject: "Your Subject Here",                 // not-required
+    sucess_msg: "Your Sucess Alert Message Here", // not-required
+    error_msg: "Your Error Alert Message Here"    // not-required
     }
 
 
