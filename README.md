@@ -15,7 +15,7 @@ VIEW FILE "demo.html" FOR MOR DETAILS
             })
         </script> 
         <form id="myForm">
-            <input name="input1" type="text"/>
+            <input class="required" name="input1" type="text"/>
             <input name="input2" type="text"/>
             <input name="input3" type="text"/>
             <textarea name="textarea1"></textarea>
@@ -30,11 +30,18 @@ PARAMS:
 THE PLUGIN WORK WITH JSON.THE AVAIlABLE POSITIONS IS
 
     {
-    to:"recipient@example.com",                   // required
-    subject: "Your Subject Here",                 // not-required
-    sucess_msg: "Your Sucess Alert Message Here", // not-required
-    error_msg: "Your Error Alert Message Here"    // not-required
+    to:"recipient@example.com",                                          // required
+    subject: "Your Subject",                                             // not-required
+    sucess_msg: "Your Sucess Alert Message",                             // not-required
+    error_msg: "Your Error Alert Message",                               // not-required
+    emptyField_msg: "Your Error Message when required field is empty"    // not-required
     }
+
+
+CLASSES:
+========
+class="required" // Required field to send mail
+
 
 
 SERVER REQUIREMENTS:

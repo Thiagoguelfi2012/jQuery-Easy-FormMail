@@ -15,7 +15,8 @@ if (isset($_REQUEST['to']) && !empty($_REQUEST['to'])) {
 
     $msg = "";
     foreach ($_REQUEST as $key => $value) {
-        if ($key != "subject" && $key != "to" && $key != "sucess_msg" && $key != "_utmz" && $key != "_utma") {
+        if ($key != "subject" && $key != "to" && $key != "sucess_msg" && $key != "error_msg"
+                && $key != "emptyField_msg" && $key != "_utmz" && $key != "_utma") {
             $msg .= ucwords($key) . ": " . $value . $quebra;
         }
     }
