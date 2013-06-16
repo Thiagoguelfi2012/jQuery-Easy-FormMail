@@ -1,6 +1,7 @@
 <?php
 // send_mail.php & jquery.EasyFormMail.js - See https://github.com/Thiagoguelfi2012/jQuery-Easy-FormMail for more info
 // Copyright (c) 2013 Thiago Valentoni Guelfi
+// Open Source - MIT License (MIT)
 
 if (PATH_SEPARATOR == ":") {
     $quebra = "\r\n";

@@ -1,4 +1,4 @@
-jQuery-Easy-FormMail Plugin
+jQuery Easy FormMail Plugin
 ====================
 
 Create easy customized FormMail to send email with this Plugin.
@@ -7,8 +7,10 @@ Create easy customized FormMail to send email with this Plugin.
 USAGE:
 ======
 
-VIEW FILE "demo.html" FOR MOR DETAILS
+VIEW FILE "demo.html" FOR MORE DETAILS
 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="EasyFormMail/jquery.easyFormMail.js"></script>
         <script>
             $(function(){
                 $("#myForm").EasyFormMail({to:"recipient@example.com"});
@@ -24,10 +26,10 @@ VIEW FILE "demo.html" FOR MOR DETAILS
         </form>
 
 
-PARAMS:
-=======
+PARAMETERS:
+===========
 
-THE PLUGIN WORK WITH JSON.THE AVAIlABLE POSITIONS IS
+THE PLUGIN WORK WITH JSON. THE AVAIlABLE POSITIONS IS
 
     {
     to:"recipient@example.com",                                          // required
@@ -40,11 +42,20 @@ THE PLUGIN WORK WITH JSON.THE AVAIlABLE POSITIONS IS
 
 CLASSES:
 ========
-class="required" // Required field to send mail
+
+class="required"        // Required field to send mail
 
 
 
 SERVER REQUIREMENTS:
 ====================
+
    - PHP5.0 or greater
    - Email Configurations Activated
+
+
+LICENSE:
+=========
+
+    Copyright (c) 2013 Thiago Valentoni Guelfi
+    Open Source - MIT License (MIT)
