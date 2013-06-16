@@ -29,7 +29,7 @@
                         var position = $(element).attr("name");
                         var value = $(element).val();
                         if(classes && classes.indexOf("required")!=-1 &&( value==""|| value==position+data.emptyField_msg)){
-                            $(element).attr("style","border:red 2px solid;").val(position+data.emptyField_msg)
+                            $(element).attr("style","border-color:red;").val(position+data.emptyField_msg)
                             .on("focus",function(){
                                 $(element).removeAttr("style").val("");
                             });
