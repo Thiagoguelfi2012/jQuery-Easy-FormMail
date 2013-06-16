@@ -11,6 +11,15 @@
    
         }, o);
         return this.each(function(i, widget){
+            // Busca os elementos internos do form a serem enviados
+            var internalElements = $(widget).find("[type!='submit']").not("[type='reset']").not("[type='button']");
+            // Busca o botao reset do form
+            var resetBtn = $(widget).find("[type='reset']");
+            resetBtn.each(function(t,elementReset){
+                $(elementReset).bind("click",function(submit){
+                    internalElements.removeAttr("style");
+                })
+            });
             // Busca o botao submit do form
             var submitBtn = $(widget).find("[type='submit']");
             submitBtn.each(function(j,elementSubmit){
@@ -23,11 +32,11 @@
                     if(data.emptyField_msg==""||data.emptyField_msg==null)
                         data.emptyField_msg = " can not be empty!";
                     //  BUSCA OS CAMPOS A SEREM ENVIADOS EMAIL
-                    var internalElements = $(widget).find("[type!='submit']").not("[type='reset']").not("[type='button']");
                     internalElements.each(function(k,element){
                         var classes = $(element).attr("class");
                         var position = $(element).attr("name");
                         var value = $(element).val();
+                        // verifica campos class="required" vazios
                         if(classes && classes.indexOf("required")!=-1 &&( value==""|| value==position+data.emptyField_msg)){
                             $(element).attr("style","border-color:red;").val(position+data.emptyField_msg)
                             .on("focus",function(){
@@ -37,6 +46,7 @@
                         }
                         data[position] = value;
                     });
+                    // envia o email
                     if(sendMail){
                         $.post("EasyFormMail/send_mail.php", data, function(result, responseType){
                             $("html").append(result);
