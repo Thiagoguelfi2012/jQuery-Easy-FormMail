@@ -11,6 +11,7 @@
             emptyField_msg: null                // [string]   optional error message when one or more fields is required and empty
    
         }, o);
+        $("head").append("<style>.efm-border{border-color:red;}</style>");
         return this.each(function(i, widget){
             // Busca os elementos internos do form a serem enviados
             var internalElements = $(widget).find("[type!='submit']").not("[type='reset']").not("[type='button']");
@@ -18,7 +19,7 @@
             var resetBtn = $(widget).find("[type='reset']");
             resetBtn.each(function(t,elementReset){
                 $(elementReset).bind("click",function(submit){
-                    internalElements.removeAttr("style");
+                    internalElements.removeClass("efm-border");
                 })
             });
             // Busca o botao submit do form
@@ -39,9 +40,9 @@
                         var value = $(element).val();
                         // verifica campos class="required" vazios
                         if(classes && classes.indexOf("required")!=-1 &&( value==""|| value==position+data.emptyField_msg)){
-                            $(element).attr("style","border-color:red;").val(position+data.emptyField_msg)
+                            $(element).addClass("efm-border").val(position+data.emptyField_msg)
                             .on("focus",function(){
-                                $(element).removeAttr("style").val("");
+                                $(element).removeClass("efm-border").val("");
                             });
                             sendMail = false;
                         }
@@ -50,7 +51,7 @@
                     // envia o email
                     if(sendMail){
                         $.post("EasyFormMail/send_mail.php", data, function(result, responseType){
-                            $("html").append(result);
+                            $("head").append(result);
                         })
                     }
                 })
