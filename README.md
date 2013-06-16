@@ -1,7 +1,8 @@
 jQuery Easy FormMail Plugin
 ====================
 
-Create easy customized FormMail to send email with this Plugin.
+Create forms easily to send email with jQuery Easy FormMail plugin!
+EX: $("#myForm").EasyFormMail({to:"recipient@example.com"});
 
 
 USAGE:
