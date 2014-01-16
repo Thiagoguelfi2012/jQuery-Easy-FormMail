@@ -14,7 +14,7 @@
         $("head").append("<style>.efm-border{border-color:red;}</style>");
         return this.each(function(i, widget){
             // Busca os elementos internos do form a serem enviados
-            var internalElements = $(widget).find("[type!='submit']").not("[type='reset']").not("[type='button']");
+            var internalElements = $(widget).find("input, textarea, button, select, option").not("[type='submit']").not("[type='reset']").not("[type='button']");
             // Busca o botao reset do form
             var resetBtn = $(widget).find("[type='reset']");
             resetBtn.each(function(t,elementReset){
